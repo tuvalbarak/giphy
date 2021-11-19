@@ -1,0 +1,22 @@
+<resources>
+
+    <string name="app_name">GiphyApi</string>
+    <string name="search_hint">Search...</string>
+
+    <string name="share">Share</string>
+    <string name="save">Save</string>
+    <string name="info">Info</string>
+    <string name="volume">Volume</string>
+
+    <string name="gif_saved_successfully">Gif saved successfully</string>
+    <string name="gif_not_saved">Could not save the gif</string>
+
+    <string name="permission_denied_dialog_title">Permission Denied</string>
+    <string name="permission_denied_dialog_message">Without this permission the app is unable to save your selected gifs to your device gallery. You will always be able to change it.</string>
+    <string name="permission_denied_dialog_positive_btn_text">I`M SURE</string>
+    <string name="permission_denied_dialog_negative_btn_text">RE-TRY</string>
+
+    <string name="preference_file_key">volume</string>
+    <string name="preference_volume_key">volume</string>
+
+</resources>

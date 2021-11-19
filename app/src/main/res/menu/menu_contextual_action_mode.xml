@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.giphyapi.ui.MainActivity">
+
+    <item
+        android:id="@+id/toolbar_save"
+        android:title="@string/save"
+        android:icon="@drawable/ic_baseline_save"
+        app:showAsAction="ifRoom"
+        android:orderInCategory="5" />
+
+    <item
+        android:id="@+id/toolbar_share"
+        android:title="@string/share"
+        android:icon="@drawable/ic_baseline_share"
+        app:showAsAction="ifRoom"
+        android:orderInCategory="10" />
+
+    <item
+        android:id="@+id/toolbar_info"
+        android:title="@string/info"
+        android:icon="@drawable/ic_baseline_info"
+        app:showAsAction="ifRoom"
+        android:orderInCategory="15" />
+
+</menu>
