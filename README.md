@@ -20,9 +20,9 @@ How to Make It Better -
 - In a production app, I would add Pagination to enable a faster loading and an overall better UX.
 - I would create an object that will take care of the entire Shared Preferences logic.
 - I would impelemnt the "Save" option, so a user will be able to save a gif to his own gallery.
-- Add a feedback that a gif was clicked (I managed to make it working while reducing the alpha value of the itemView in the adapter, but couldn't manage to restrict that only one item at a time will be selected without refreshing the entire list - which I didn't want to).
+- Add a feedback that a gif was clicked (I managed to make it work, but couldn't manage to restrict that only one item at a time will be selected without refreshing the entire list - which I didn't want to, so I decided not to include it at all).
 
-* I decided to write the background music related code in GifFragment to keep the MainActivity empty (although it comes in expense that the music is bound to the fragment lifecycle). In a production app I would implement the second fragment as a dialog, and then this issue won't matter (I implemented it as fragment to show navigation between fragments with SafeArgs and Parcelize).
+* I decided to write the background music related code in GifFragment to keep the MainActivity empty (although it comes in expense that the music is bound to the fragment lifecycle). In a production app I would implement the second fragment as a dialog, and then this issue won't matter (I implemented it as fragment to show navigation between fragments with SafeArgs and Parcelize) Another option is to write the background music code in the MainActivity - it's UX against code quality - in this case I preferred to go with code quality to show my capabilities.
 
 Below you will find some photos from the app, and a link to a YouTube video I made to demonstrate the app flows.
 
