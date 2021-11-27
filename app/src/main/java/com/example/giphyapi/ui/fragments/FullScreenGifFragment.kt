@@ -14,9 +14,10 @@ import com.example.giphyapi.models.Gif
 import com.example.giphyapi.ui.extensions.displaySnackbar
 import com.example.giphyapi.ui.extensions.shareGif
 import com.example.giphyapi.ui.extensions.showInfo
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.fragment_full_screen_gif.*
 
-
+@AndroidEntryPoint
 class FullScreenGifFragment : BaseFragment() {
     override val layoutRes = R.layout.fragment_full_screen_gif
     override val logTag = "FullScreenGifFragment"

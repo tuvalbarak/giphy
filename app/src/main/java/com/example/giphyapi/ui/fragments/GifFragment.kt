@@ -11,6 +11,7 @@ import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.widget.SearchView
 import androidx.core.content.res.ResourcesCompat
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
@@ -25,22 +26,20 @@ import com.example.giphyapi.ui.extensions.show
 import com.example.giphyapi.ui.extensions.gone
 import com.example.giphyapi.utils.States
 import com.example.giphyapi.viewmodels.GifViewModel
-import com.example.giphyapi.viewmodels.ViewModelFactory
+//import com.example.giphyapi.viewmodels.ViewModelFactory
+import dagger.hilt.android.AndroidEntryPoint
 import io.reactivex.Observable
 import io.reactivex.ObservableOnSubscribe
 import kotlinx.android.synthetic.main.fragment_gifs.*
 import java.util.concurrent.TimeUnit
 
-
+@AndroidEntryPoint
 class GifFragment : BaseFragment() {
     override val layoutRes = R.layout.fragment_gifs
     override val logTag = "GifFragment"
     private var music: MediaPlayer? = null
 
-    //Lazy initialization of VM
-    private val gifViewModel by lazy {
-        ViewModelProvider(this, ViewModelFactory.create(requireContext())).get(GifViewModel::class.java)
-    }
+    private val gifViewModel: GifViewModel by viewModels()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         //Asking for permissions.

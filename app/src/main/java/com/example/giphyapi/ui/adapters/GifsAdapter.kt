@@ -30,7 +30,7 @@ object GifDiffCallback : DiffUtil.ItemCallback<Gif>() {
 class GifViewHolder(
     itemView: View,
     private val onGifClickListener: (gif: Gif) -> Unit,
-    private val onGifLongClickListener: (gif: Gif) -> Unit, ) : RecyclerView.ViewHolder(itemView) {
+    private val onGifLongClickListener: (gif: Gif) -> Unit) : RecyclerView.ViewHolder(itemView) {
 
     fun bind(gif: Gif) {
 

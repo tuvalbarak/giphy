@@ -1,17 +1,19 @@
 package com.example.giphyapi.viewmodels
 
-import android.app.Application
 import android.util.Log
-import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.giphyapi.models.Gif
 import com.example.giphyapi.repos.GifRepo
 import com.example.giphyapi.utils.States
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class GifViewModel(private val gifRepo: GifRepo, app: Application) : AndroidViewModel(app) {
+@HiltViewModel
+class GifViewModel @Inject constructor (private val gifRepo: GifRepo) : ViewModel() {
 
     //Holds the state of the app.
     val state = MutableLiveData<States>().apply {

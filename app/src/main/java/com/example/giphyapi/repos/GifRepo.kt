@@ -1,24 +1,18 @@
 package com.example.giphyapi.repos
 
-import com.example.giphyapi.models.Gif
-import com.example.giphyapi.remote.gifsApi
+import com.example.giphyapi.remote.GifServiceHelper
+import javax.inject.Inject
 
 /**
  * The Repo contains suspend functions to enable async performance using Coroutines.
  */
-interface GifRepo {
-    suspend fun getGifsByKeyword(keyword: String): List<Gif>?
-    suspend fun getTrendingGifs(): List<Gif>?
-}
 
-internal object GifRepoImpl : GifRepo {
+class GifRepo @Inject constructor (private val gifServiceHelper: GifServiceHelper) {
+    private val API_KEY = "Zz7XnA0RZzJJetQAQv1e2c7ErivA9F5u"
 
-    private const val API_KEY = "Zz7XnA0RZzJJetQAQv1e2c7ErivA9F5u"
+    suspend fun getGifsByKeyword(keyword: String) =
+        gifServiceHelper.getGifsByKeyword(keyword, API_KEY).body()?.data
 
-    override suspend fun getGifsByKeyword(keyword: String) =
-        gifsApi.getGifsByKeyword(keyword, API_KEY).body()?.data
-
-    override suspend fun getTrendingGifs() =
-        gifsApi.getTrendingGifs(API_KEY).body()?.data
-
+    suspend fun getTrendingGifs() =
+        gifServiceHelper.getTrendingGifs(API_KEY).body()?.data
 }
